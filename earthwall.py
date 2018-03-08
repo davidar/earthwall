@@ -32,6 +32,7 @@ for c in d['data']['children']:
     if src['width'] >= MIN_WIDTH:
         if os.getenv('GATEWAY_INTERFACE') == 'CGI/1.1':
             print('Location:', url)
+            print('Cache-Control: no-cache')
             print()
             break
         print(c['data']['title'], file=sys.stderr)
